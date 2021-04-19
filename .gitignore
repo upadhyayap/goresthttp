@@ -1,0 +1,13 @@
+# Binaries for programs abd plugins
+/bin
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binaries bulit with `go test -c`
+*.test
+# output of go coverage tool
+*.out
+.DS_store
