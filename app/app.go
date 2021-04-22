@@ -1,22 +1,34 @@
 package app
 
 import (
-	"net/http"
-	"resthttpservice/controllers"
+	"github.com/gin-gonic/gin"
 )
 
-func StartApp() {
-	bindRoutes()
-	StartAppInternal()
+var (
+	router *gin.Engine
+)
+
+func init() {
+	router = gin.Default()
+	//router = gin.New()
 }
 
-func bindRoutes() {
-	http.HandleFunc("/user", controllers.GetUser)
+func StartApp() {
+	mapRoutesUsingGin()
+	//bindRoutes()
+	StartAppInternal()
 }
 
 func StartAppInternal() {
 	// scope of err is limited in if statement
-	if err := http.ListenAndServe(":6061", nil); err != nil {
+	// using net/http
+	/* if err := http.ListenAndServe(":6061", nil); err != nil {
+		panic(err)
+	} */
+
+	//using gin-gonic
+
+	if err := router.Run(":6061"); err != nil {
 		panic(err)
 	}
 }

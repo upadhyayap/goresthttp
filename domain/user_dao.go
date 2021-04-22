@@ -8,7 +8,7 @@ import (
 //You can return as many vlues you want but last one has to be error
 var (
 	users = map[int64]*User{
-		123: {Id: 123, FirstName: "Anand", LastName: "bhai", email: "anand@github.com"},
+		123: {Id: uint(123), FirstName: "Anand", LastName: "bhai", email: "anand@github.com"},
 	}
 	UserDao userDaoInterface
 )
