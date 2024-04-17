@@ -1,3 +1,13 @@
+### How to build?
+```
+go build -v ./...
+```
+
+### How to test?
+```
+go test -v ./...
+```
+
 ### How to run?
 ```
 go run main.go
